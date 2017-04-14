@@ -1,0 +1,53 @@
+{
+	"variables": [],
+	"info": {
+		"name": "dipper",
+		"_postman_id": "fdf34242-bbcc-e9f9-61d5-cbeaa3523ab5",
+		"description": "APis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8000/api/request?connId=19&timeout=8000",
+			"request": {
+				"url": "http://localhost:8000/api/request?connId=19&timeout=8000",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "- Exposes a GET API as &quot;api/request?connId=19&amp;timeout=80&quot;\n\nThis API will keep the request running for provided time on the server side. After\n\nthe successful completion of the provided time it should return {&quot;status&quot;:&quot;ok&quot;}"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/serverStatus",
+			"request": {
+				"url": "http://localhost:8000/api/serverStatus",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "- Exposes a GET API as &quot;api/serverStatus&quot;\n\nThis API returns all the running requests on the server with their time left for\n\ncompletion. E.g {&quot;2&quot;:&quot;15&quot;,&quot;8&quot;:&quot;10&quot;} where 2 and 8 are the connIds and 15 and 10\n\nis the time remaining for the requests to complete (in seconds)."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/kill",
+			"request": {
+				"url": "http://localhost:8000/api/kill",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"connId\": 19\n}"
+				},
+				"description": "- Exposes a PUT API as &quot;api/kill&quot; with payload as {&quot;connId&quot;:12}\n\nThis API will finish the running request with provided connId, so that the finished\n\nrequest returns {&quot;status&quot;:&quot;killed&quot;} and the current request will return\n\n{&quot;status&quot;:&quot;ok&quot;}. If no running request found with the provided connId on the server\n\nthen the current request should return &quot;status&quot;:&quot;invalid connection Id : &lt;connId&gt;&quot;}"
+			},
+			"response": []
+		}
+	]
+}
