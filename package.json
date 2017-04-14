@@ -8,7 +8,7 @@
     "server": "NODE_PATH=. babel-node --stage 1 server.js",
     "nodemon:server": "NODE_PATH=. nodemon --exec \"babel-node --stage 1\" server.js"
   },
-  "author": "'Shubham Batra'",
+  "author": "Shubham Batra <shubham.batra17@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "babel": "^5.8.34",
@@ -17,11 +17,6 @@
   },
   "dependencies": {
     "body-parser": "^1.17.1",
-    "cookie-parser": "^1.4.3",
-    "ejs": "^2.5.5",
-    "express": "^4.15.2",
-    "jsonwebtoken": "^7.3.0",
-    "mongoose": "^4.9.4",
-    "morgan": "^1.8.1"
+    "express": "^4.15.2"
   }
 }

@@ -25,6 +25,8 @@ npm run server
 
 please check this url on Postman for best result
 
+PostMan import file is https://github.com/shubhambatra/Dipper/blob/master/dipper.postman_collection.json
+
 open http://127.0.0.1:8000/
 
 initiate request http://localhost:8000/api/request?connId=19&timeout=8000

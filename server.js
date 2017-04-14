@@ -50,7 +50,8 @@ app.get('/api/request', ( req, res ) => {
 				res.send({ status: "ok"}); // send response
 				clearInterval(setInv); 		// clear/destroy current Interval
 			}
-		}, 400);
+
+		}, 80);
 
 		// insert the current request into global [] timeout
 		timeout.push({
@@ -93,10 +94,10 @@ app.put( '/api/kill', ( req, res ) => {
 		if( +req.body.connId === +conn.connId ) {
 			// clear/destroy setTimeout
 			clearTimeout(conn.timeoutID);
+			removeByAttr(timeout, 'connId', conn.connId);
 			msg = 'killed';	// assign new message
 		}
 	});
-
 	res.send({ status : msg }); // send final response
 	
 });
