@@ -41,3 +41,8 @@ body {
 	"connId": 19
 }
 
+# curl Request
+
+```
+curl "http://localhost:8000/api/request?connId=19&timeout=8000"
+```
