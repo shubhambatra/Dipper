@@ -23,7 +23,7 @@ npm run server
 ``` 
 
 
-please check this url on Postman for best result
+please check this urls on Postman.
 
 PostMan import file is https://github.com/shubhambatra/Dipper/blob/master/dipper.postman_collection.json
 
